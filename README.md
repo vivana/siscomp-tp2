@@ -6,3 +6,10 @@ Este programa recupera la cotización de al menos dos criptomonedas haciendo uso
 
 ## Makefile
 Se provee un archivo make para realizar la compilación y generar los archivos binarios necesarios para la ejecución del programa cotiza.py
++ `$ make make` : ejecuta el código en python que hace uso de la librería compartida para ejecutar el código en c que a su vez invoca el código en assembler.
++ `$ make debug` : ejecuta el código en c inicializando la consola GDB.
+
+Para asegurarnos de eliminar todos los binarios podemos ejecutar:
++ `$ make clean` : realiza el borrado de los archivos binarios
++ `$ make clean_debug` : realiza el borrado de los archivos binarios y el archivo de depuración para gdb.
+
