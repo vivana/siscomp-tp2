@@ -21,7 +21,7 @@ def convertir(base, tasa ):
 
 def tasa_de_cambio(base, symbol):
   res = requests.get('https://api.exchangerate.host/latest?'  
-                     + 'source=crypto'  #+ '&places=6'
+                     + 'source=crypto'  
                      + '&base=' + base 
                      + '&symbols=' + symbol)
   data = res.json()
@@ -50,36 +50,3 @@ print('Valor de Cardano (ADA) = '
 + str(ADA_USD) + ' USD' + ' | '
 + str(convertir(ADA_USD, USD_ARS))+ ' ARS' + ' | '
 + str(convertir(ADA_USD, USD_EUR))+ ' EUR')
-#print('BASE: ' + str(BTC_USD))
-#print('TASA: '+ str(USD_ARS))
-#print('ejecutado en py: ' + str(BTC_USD*USD_ARS) )
-
-#print('llamado desde c: '+ str(convertir(BTC_USD, USD_ARS)))
-
-
-
-# res = requests.get('https://api.exchangerate.host/latest?places=8&source=crypto&base=USD&symbols=USD,EUR,ARS,BTC,BUSD')
-# data = res.json()
-
-# print(json.dumps(res.json(), indent=4))
-# print('1 USD = ' + str(res.json()['rates']['BTC']) + ' BITCOIN')
-# print('1 USD = ' + str(res.json()['rates']['BUSD']) + ' BNB')
-
-# res = requests.get('https://api.exchangerate.host/latest?places=8&source=crypto&base=BTC&symbols=USD,EUR,ARS,BTC,BUSD')
-# data = res.json()
-
-# print(json.dumps(res.json(), indent=4))
-# print('1 BTC = ' + str(res.json()['rates']['USD']) + ' USD')
-# print('1 BTC = ' + str(res.json()['rates']['BUSD']) + ' BUSD')
-
-# res = requests.get('https://api.exchangerate.host/latest?places=8&source=crypto&base=BUSD&symbols=USD,EUR,ARS,BTC,BUSD')
-# data = res.json()
-
-# print(json.dumps(res.json(), indent=4))
-# print('1 BUSD = ' + str(res.json()['rates']['USD']) + ' USD')
-# print('1 BTC = ' + str(res.json()['rates']['BUSD']) + ' BUSD')
-
-
-# # res = requests.get('https://openexchangerates.org/api/latest.json?places=8&app_id=b37be17f100e4ab1bda9034eb87e3db4&base=BTC&show_alternative=1&symbols=USD,EUR,ARS,BTC,ETH')
-# # print(json.dumps(res.json(), indent=4))
-# # print(1/res.json()['rates']['BTC'])
